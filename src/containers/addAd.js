@@ -43,7 +43,7 @@ let AddAd = props => {
                 <label htmlFor="title">Заголовок</label>
                 <input className="form__title" type="text" name="title" id="title" maxLength="50" required></input>
                 <label htmlFor="description">Текст</label>
-                <textarea className="form__description" type="text" name="description" id="description" maxLength="300" rows="6"></textarea>
+                <textarea className="form__description" type="text" name="description" id="description" maxLength="500" rows="6"></textarea>
                 <label htmlFor="image">Ссылка на изображение</label>
                 <input className="form__image" type="text" name="image" id="image" maxLength="300"></input>
                 <Link to="/" ><input type="submit" className="form__submit" value="Save" onClick={(e) => addToState(e)}></input></Link>
