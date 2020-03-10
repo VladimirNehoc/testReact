@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+import ads from './reducers'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+fetch('https://5e5f623ab5c43c0014ef984c.mockapi.io/ad').then(response => response.json()).then(result => {
+  const store = createStore(ads, result)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  ReactDOM.render(
+    (<BrowserRouter>
+        <App store={store} />
+    </BrowserRouter>), 
+    document.getElementById('root'));
+});
