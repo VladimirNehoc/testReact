@@ -9,13 +9,13 @@ import AddAd from './containers/addAd'
 
 let App = props => {
   const { ads, addAd, changeAd, deleteAd } = props;
-  
+
   return (
-    <div className='wrap'>
+    <div className="wrap">
       <Switch>
-        <Route exact path='/' render={() => <AllAds ads={ads} deleteAd={deleteAd} />} />
-        <Route path='/edit-ad' render={() => <EditAd ads={ads} changeAd={changeAd} />} />
-        <Route path='/create-add' render={() => <AddAd addAd={addAd} />} />
+        <Route exact path="/" render={() => <AllAds ads={ads} deleteAd={deleteAd} />} />
+        <Route path="/edit-ad" render={() => <EditAd ads={ads} changeAd={changeAd} />} />
+        <Route path="/create-add" render={() => <AddAd addAd={addAd} />} />
       </Switch>
     </div>
   )
